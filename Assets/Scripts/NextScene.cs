@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour {
 
-	public void update()
+	public void Update()
 	{
         if (Input.GetKey(KeyCode.Space))
         {

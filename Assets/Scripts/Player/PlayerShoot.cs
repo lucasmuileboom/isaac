@@ -113,7 +113,8 @@ public class PlayerShoot : MonoBehaviour
 		{
 			Shoot = false;
 			StartCoroutine ("ShootTimer");
-			var bullet = (GameObject)Instantiate(bulletPrefab,bulletSpawn.position,Quaternion.Euler (0,0,rot*90));
+            Vector3 schootposition = new Vector3(bulletSpawn.position.x, bulletSpawn.position.y - 0.15f, bulletSpawn.position.z);
+            var bullet = (GameObject)Instantiate(bulletPrefab, schootposition, Quaternion.Euler (0,0,rot*90));
 			bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * speed;
 		}
 	}

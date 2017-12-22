@@ -58,7 +58,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 5
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   - {fileID: 1681642265681772, guid: fb4747bbc2484f643aa05a88e716284a, type: 2}
   - {fileID: 1277914049508448, guid: 10e93eba63fab564f81d10991787879e, type: 2}
   bloodtimer: 1.5
-  dropdistance: 0
+  dropdistance: 0.5
 --- !u!114 &114924135662400616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,7 +195,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 8a80b26c1677d1b458e2ff73cddb9f6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

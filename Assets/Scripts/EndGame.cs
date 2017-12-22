@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndGame : MonoBehaviour {
-
+public class endgame : MonoBehaviour
+{
     public GameObject Player;
     [SerializeField]
     int EndTime;
@@ -16,18 +16,19 @@ public class EndGame : MonoBehaviour {
         health = Player.GetComponent<PlayerHealth>();
     }
 
-    void Update() {
-        if(GameObject.FindGameObjectWithTag("Enemy") == null)
+    void Update()
+    {
+        if (GameObject.FindGameObjectWithTag("Enemy") == null)
         {
             StartCoroutine("EndTimer");
-            
+
         }
 
         if (health.Health <= 0)
         {
             StartCoroutine("EndTimer");
         }
-	}
+    }
 
     IEnumerator EndTimer()
     {
@@ -35,5 +36,4 @@ public class EndGame : MonoBehaviour {
         yield return new WaitForSeconds(EndTime);
         SceneManager.LoadScene(0);
     }
-    
 }

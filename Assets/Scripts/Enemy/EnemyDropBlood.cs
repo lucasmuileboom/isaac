@@ -6,12 +6,10 @@ public class EnemyDropBlood : MonoBehaviour
 {
     [SerializeField] private GameObject[] blood;
     [SerializeField] private GameObject[] bloodondead;
-    //[SerializeField] private GameObject[] bloodonhit;//??
     [SerializeField] private GameObject[] Bodypartondead;
     [SerializeField] private float bloodtimer;
     private float timer = 0;
     [SerializeField]private float dropdistance;
-    //mischien rotation ook random van het bloed
 
     void Start ()
     {
@@ -28,13 +26,8 @@ public class EnemyDropBlood : MonoBehaviour
     }
     public void DropBloodOnDeath()
     {
-        Instantiate(bloodondead[Random.Range(0, bloodondead.Length)], new Vector3(transform.position.x,transform.position.y,-0.5f), Quaternion.Euler(0, 0, 0));
-        //GameObject bodypart = Instantiate(Bodypartondead[Random.Range(0, Bodypartondead.Length)], transform.position,Quaternion.Euler(0, 0, 0));
-        //bodypart.GetComponent<Rigidbody2D>().AddForce();//drop bone
-    }
-    public void DropBloodOnHit()
-    {
-        //weet nog niet hoe het bloed hier moet
+        Instantiate(bloodondead[Random.Range(0, bloodondead.Length)], transform.position, Quaternion.Euler(0, 0, 0));
+        Instantiate(Bodypartondead[Random.Range(0, Bodypartondead.Length)], new Vector3(transform.position.x - Random.Range(-dropdistance, dropdistance), transform.position.y - Random.Range(-dropdistance, dropdistance), transform.position.z), Quaternion.Euler(0, 0, 0));
     }
     private void DropBlood()
     {

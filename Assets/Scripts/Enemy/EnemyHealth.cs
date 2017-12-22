@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject enemyDeath;
     private EnemyDropBlood enemyDropBlood;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer SpriteRenderer;
-    public int health = 10;
+    private int health = 10;
     private float timer;
     [SerializeField]
     private float colortimer;
@@ -35,11 +37,11 @@ public class EnemyHealth : MonoBehaviour
     {
         KnockBack(startposision);
         ChangeColor();
-        enemyDropBlood.DropBloodOnHit();
         health -= damage;
         if (health <= 0)//ga dood
         {
-            enemyDropBlood.DropBloodOnDeath();           
+            Instantiate(enemyDeath, transform.position, Quaternion.Euler(0, 0, 0));
+            enemyDropBlood.DropBloodOnDeath();            
             Destroy(this.gameObject);
         }
         //print(health);
