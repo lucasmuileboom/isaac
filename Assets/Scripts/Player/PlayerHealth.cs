@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
-{
-    [SerializeField]
-    GameObject PlayerDeath;
-    [SerializeField]
-    private int Health;
+{ 
+    public int Health;
     [SerializeField]
     private int TimerDur;
 
@@ -26,6 +23,11 @@ public class PlayerHealth : MonoBehaviour
 
     private bool Invincible = false;
 
+    private void Start()
+    {
+        Health = 6;
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy" && Invincible == false)
@@ -39,7 +41,6 @@ public class PlayerHealth : MonoBehaviour
 
         if (Health <= 0)
         {
-            Instantiate(PlayerDeath, transform.position, Quaternion.Euler(0, 0, 0));
             Destroy(gameObject);
         }
 
